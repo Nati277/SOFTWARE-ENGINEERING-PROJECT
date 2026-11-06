@@ -13,7 +13,6 @@ class Recipient {
 public:
     Recipient(int recipientId, string name, string phone); // constructor is announced here, will be called when object initialises
 
-
     // the following are getters (access private stuff without changing it)
 
     int getRecipientId() const;

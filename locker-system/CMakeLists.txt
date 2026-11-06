@@ -7,4 +7,6 @@ add_executable(locker_system main.cpp
         ParcelSize.h
         DeliveryStatus.h
         Recipient.cpp
-        Recipient.h)
+        Recipient.h
+        Parcel.cpp
+        Parcel.h)
