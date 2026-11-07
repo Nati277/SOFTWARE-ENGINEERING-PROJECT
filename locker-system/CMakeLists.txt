@@ -11,4 +11,6 @@ add_executable(locker_system main.cpp
         Parcel.cpp
         Parcel.h
         Compartment.cpp
-        Compartment.h)
+        Compartment.h
+        Locker.cpp
+        Locker.h)

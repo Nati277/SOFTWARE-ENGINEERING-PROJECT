@@ -1,0 +1,50 @@
+#include "Locker.h"
+#include <string>
+#include <vector>
+#include "Compartment.h"
+#include "ParcelSize.h"
+
+using std::string;
+using std::vector;
+
+Locker::Locker(int lockerId, const string& location, const vector<Compartment>& compartments) // constructor, starts at initialisation
+// Using pointers here to...
+    : lockerId(lockerId), location(location), compartments(compartments) {} // starting values
+
+
+Compartment* Locker::findAvailableCompartment(ParcelSize size) // this will look for an available compartment (not empty)
+{
+    for (Compartment& i : compartments) {
+        if (i.getSize() == size && i.isAvailable()) {    // i.getSize needed so it can be compared ith size, otherwise size is an unnecessary concept
+            return &i;                                   // returns the available compartment
+        }
+    }
+    return nullptr;       // no free compartment of right size, runs when loop to find fails because it would have already returned
+}
+
+// gets the amount of occupants
+
+double Locker::getOccupancyRate() const
+{
+
+    int occupied = 0; // occupied is set as 0
+
+    for (const Compartment& i : compartments)
+    {
+        if (i.isAvailable() == false)
+        {
+            occupied++;      // for each compartment, if one is unavailable it means it has occupants, so occupied increases by one
+        }
+    }
+
+    double occupiedD = static_cast<double>(occupied); // turns occupied which is an int value into a double o we can calculate a rate
+    double totaln = compartments.size(); // gets a total number of compartments
+    double occupiedRate = occupiedD / totaln; // takes the number of occupied and divides by number of total compartments, telling the occupied rate.
+    return occupiedRate;
+
+
+
+    return static_cast<double>(occupied) / compartments.size();
+}
+
+

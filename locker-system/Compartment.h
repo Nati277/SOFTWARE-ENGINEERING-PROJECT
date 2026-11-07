@@ -6,26 +6,24 @@
 #define LOCKER_SYSTEM_COMPARTMENT_H
 #include "ParcelSize.h"
 
-// waiting for design clarification on size, will fix when clarified. Thank you
-// for now this will be a version without it
-
+// got clarification on the size thing, will do it like this for now.
 
 class Compartment {
 
 public:
-    explicit Compartment(int compartmentId); // explicit as only one attribute here for now (no size yet)
+    Compartment(int compartmentId, ParcelSize size); // I'll do it like this for now and try to talk about this in our meeting
 
     void unlock();
     void lock();
     void markOccupied();
     void markEmpty();
     bool isAvailable() const;
-
+    ParcelSize getSize() const;
 
 private:
 
     int compartmentId;
-    // ParcelSize size; (until clarification will be commented out)
+    ParcelSize size;
     bool isOccupied;
     bool isLocked;
 
