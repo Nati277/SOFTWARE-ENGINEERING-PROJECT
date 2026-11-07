@@ -7,8 +7,7 @@
 using std::string;
 using std::vector;
 
-Locker::Locker(int lockerId, const string& location, const vector<Compartment>& compartments) // constructor, starts at initialisation
-// Using pointers here to...
+Locker::Locker(int lockerId, const string location, const vector<Compartment> compartments) // constructor, starts at initialisation
     : lockerId(lockerId), location(location), compartments(compartments) {} // starting values
 
 
@@ -42,9 +41,6 @@ double Locker::getOccupancyRate() const
     double occupiedRate = occupiedD / totaln; // takes the number of occupied and divides by number of total compartments, telling the occupied rate.
     return occupiedRate;
 
-
-
-    return static_cast<double>(occupied) / compartments.size();
 }
 
 
