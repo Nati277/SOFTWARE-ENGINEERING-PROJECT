@@ -1,7 +1,7 @@
 #include "Compartment.h"
 
-Compartment::Compartment(int compartmentId) // constructor, called at initialisation
-    : compartmentId(compartmentId),isOccupied(false), isLocked(true) {} // initial attributes
+Compartment::Compartment(int compartmentId, ParcelSize size) // constructor, called at initialisation
+    : compartmentId(compartmentId),isOccupied(false), isLocked(true), size(size) {} // initial attributes
 
 void Compartment::unlock() {
     isLocked = false;
@@ -25,4 +25,8 @@ void Compartment::markOccupied()
 void Compartment::markEmpty()
 {
     isOccupied = false;
+}
+
+ParcelSize Parcel::getSize() const {
+    return size;
 }
