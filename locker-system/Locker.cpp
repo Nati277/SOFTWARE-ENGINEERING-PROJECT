@@ -11,7 +11,7 @@ Locker::Locker(int lockerId, const string location, const vector<Compartment> co
     : lockerId(lockerId), location(location), compartments(compartments) {} // starting values
 
 
-Compartment* Locker::findAvailableCompartment(ParcelSize size) // this will look for an available compartment (not empty)
+Compartment* Locker::findAvailableCompartment(Validation size) // this will look for an available compartment (not empty)
 {
     for (Compartment& i : compartments) {
         if (i.getSize() == size && i.isAvailable()) {    // i.getSize needed so it can be compared ith size, otherwise size is an unnecessary concept

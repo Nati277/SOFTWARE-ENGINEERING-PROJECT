@@ -84,6 +84,13 @@ build CMakeFiles/locker_system.dir/Locker.cpp.obj: CXX_COMPILER__locker_system_u
   OBJECT_DIR = CMakeFiles\locker_system.dir
   OBJECT_FILE_DIR = CMakeFiles\locker_system.dir
 
+build CMakeFiles/locker_system.dir/CollectionCode.cpp.obj: CXX_COMPILER__locker_system_unscanned_Debug C$:/Users/antia/CLionProjects/locker-system/CollectionCode.cpp || cmake_object_order_depends_target_locker_system
+  CONFIG = Debug
+  DEP_FILE = CMakeFiles\locker_system.dir\CollectionCode.cpp.obj.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\locker_system.dir
+  OBJECT_FILE_DIR = CMakeFiles\locker_system.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target locker_system
@@ -92,7 +99,7 @@ build CMakeFiles/locker_system.dir/Locker.cpp.obj: CXX_COMPILER__locker_system_u
 #############################################
 # Link the executable locker_system.exe
 
-build locker_system.exe: CXX_EXECUTABLE_LINKER__locker_system_Debug CMakeFiles/locker_system.dir/main.cpp.obj CMakeFiles/locker_system.dir/Recipient.cpp.obj CMakeFiles/locker_system.dir/Parcel.cpp.obj CMakeFiles/locker_system.dir/Compartment.cpp.obj CMakeFiles/locker_system.dir/Locker.cpp.obj
+build locker_system.exe: CXX_EXECUTABLE_LINKER__locker_system_Debug CMakeFiles/locker_system.dir/main.cpp.obj CMakeFiles/locker_system.dir/Recipient.cpp.obj CMakeFiles/locker_system.dir/Parcel.cpp.obj CMakeFiles/locker_system.dir/Compartment.cpp.obj CMakeFiles/locker_system.dir/Locker.cpp.obj CMakeFiles/locker_system.dir/CollectionCode.cpp.obj
   CONFIG = Debug
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32

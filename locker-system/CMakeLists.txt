@@ -13,4 +13,7 @@ add_executable(locker_system main.cpp
         Compartment.cpp
         Compartment.h
         Locker.cpp
-        Locker.h)
+        Locker.h
+        CollectionCode.cpp
+        CollectionCode.h
+        Validation.h)

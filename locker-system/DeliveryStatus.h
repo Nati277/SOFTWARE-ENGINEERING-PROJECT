@@ -3,7 +3,6 @@
 #ifndef LOCKER_SYSTEM_DELIVERYSTATUS_H
 #define LOCKER_SYSTEM_DELIVERYSTATUS_H
 
-/// enumeration limits value of deliverystatus to these fixed options
 
 
 enum class DeliveryStatus {

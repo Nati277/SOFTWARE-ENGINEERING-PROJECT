@@ -12,14 +12,14 @@ class Locker {
 
 public:
     Locker(int lockerId, const std::string location, const std::vector<Compartment> compartments);
-    Compartment* findAvailableCompartment(ParcelSize size); // pointer to allow for actual change of compartment (not on copy)
+    Compartment* findAvailableCompartment(Validation size); // pointer to allow for actual change of compartment (not on copy)
     double getOccupancyRate() const;
 
 
 private:
     int lockerId;
     std::string location;
-    std::vector<Compartment> compartments; //composition begins here, vector used so amount is dynamic.
+    std::vector<Compartment> compartments; // composition begins here, vector used so amount is dynamic.
 
 };
 
