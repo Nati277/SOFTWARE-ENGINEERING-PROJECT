@@ -1,31 +1,28 @@
 #include "CollectionCode.h"
-
 #include <string>
 #include <cstdlib>
 #include <ctime>
 
-
 using std::string;
 
+// Removed the constructor entirely because CollectionCode doesn't own those variables anymore.
 
-CollectionCode::CollectionCode(): code(), expiryTime(), isUsed(false){
-}
-
-std::string CollectionCode::generate() // generation function
+std::string CollectionCode::generate() 
 {
-    code ="";
-    for (int i = 0; i < 8; i++) // I chose there to be 8 digits for the code to be for now until further notice
+    std::string newCode = "";
+    for (int i = 0; i < 8; i++) 
     {
-        code = code + (char)('0' + rand() % 10); // creates the code
+        newCode = newCode + (char)('0' + rand() % 10); 
     }
-
-    expiryTime = std::chrono::system_clock::now() + std::chrono::seconds(6); // sets expiryTime so 6 secs from now it expires, if realistic much longer
-    isUsed = false;
-    return code;
-
+    return newCode;
 }
 
-Validation CollectionCode::validate(const std::string& input)
+Validation CollectionCode::validate(const std::string& input) 
 {
-    // validate function gonna be here
+    // For now, just returning VALID so the compiler stops complaining.
+    // You can add real validation logic here later!
+    if (input.length() == 8) {
+        return Validation::VALID;
+    }
+    return Validation::INVALID;
 }
