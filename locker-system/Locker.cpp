@@ -7,8 +7,8 @@
 using std::string;
 using std::vector;
 
-Locker::Locker(int lockerId, const string location, const vector<Compartment> compartments) // constructor, starts at initialisation
-    : lockerId(lockerId), location(location), compartments(compartments) {} // starting values
+Locker::Locker(int lockerId, double fee, const string location, const vector<Compartment> compartments) // constructor, starts at initialisation
+    : lockerId(lockerId), fee_(fee), location(location), compartments(compartments) {} // starting values
 
 
 Compartment* Locker::findAvailableCompartment(Validation size) // this will look for an available compartment (not empty)
