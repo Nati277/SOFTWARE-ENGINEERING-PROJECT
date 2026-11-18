@@ -7,12 +7,14 @@
 
 class SmallLocker : public Locker {
 public:
-    // Pass the location and compartments up to the base Locker class, 
-    // and hardcode the fee as 1.50
+    // Pass the variables up to the base class, hardcode the fee to 1.50
     SmallLocker(int id, std::string location, std::vector<Compartment> compartments) 
-        : Locker(id, 1.50, location, compartments) {} 
-        
-    // (Later, you'll add the virtual functions here if Locker has any)
+        : Locker(id, 1.50, location, compartments) {}
+
+    // Implement the pure virtual function from Locker!
+    double calculateFee() const override {
+        return 1.50; 
+    }
 };
 
 #endif
