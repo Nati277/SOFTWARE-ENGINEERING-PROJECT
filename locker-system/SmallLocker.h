@@ -13,7 +13,7 @@ public:
 
     // Implement the pure virtual function from Locker!
     double calculateFee() const override {
-        return 1.50; 
+        return fee_;
     }
 };
 

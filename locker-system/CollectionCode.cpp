@@ -5,24 +5,27 @@
 
 using std::string;
 
-// Removed the constructor entirely because CollectionCode doesn't own those variables anymore.
 
 std::string CollectionCode::generate() 
 {
     std::string newCode = "";
-    for (int i = 0; i < 8; i++) 
+    for (int i = 0; i < 4; i++)  // creates 4 digit code now
     {
         newCode = newCode + (char)('0' + rand() % 10); 
     }
     return newCode;
 }
 
-Validation CollectionCode::validate(const std::string& input) 
+Validation CollectionCode::validate(const std::string& input, const Compartment& compartment)
 {
-    // For now, just returning VALID so the compiler stops complaining.
-    // You can add real validation logic here later!
-    if (input.length() == 8) {
-        return Validation::VALID;
+    if (input != compartment.getPin() || compartment.getIsUsed()) // if the code is wrong, or its already used
+        {
+        return Validation::INVALID;
     }
-    return Validation::INVALID;
+    else if (std::chrono::system_clock::now() > compartment.getExpiryTime()) // if we are past the expiry time
+    {
+        return Validation::EXPIRED;
+    }
+
+    return Validation::VALID;
 }
