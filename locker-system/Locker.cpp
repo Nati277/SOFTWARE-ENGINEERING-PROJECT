@@ -3,6 +3,7 @@
 #include <vector>
 #include "Compartment.h"
 #include "ParcelSize.h"
+#include <stdexcept>
 
 using std::string;
 using std::vector;
@@ -11,7 +12,7 @@ Locker::Locker(int lockerId, double fee, const string location, const vector<Com
     : lockerId(lockerId), fee_(fee), location(location), compartments(compartments) {} // starting values
 
 
-Compartment* Locker::findAvailableCompartment(Validation size) // this will look for an available compartment (not empty)
+Compartment* Locker::findAvailableCompartment(ParcelSize size) // this will look for an available compartment (not empty)
 {
     for (Compartment& i : compartments) {
         if (i.getSize() == size && i.isAvailable()) {    // i.getSize needed so it can be compared ith size, otherwise size is an unnecessary concept
@@ -37,10 +38,11 @@ double Locker::getOccupancyRate() const
     }
 
     double occupiedD = static_cast<double>(occupied); // turns occupied which is an int value into a double o we can calculate a rate
-    double totaln = compartments.size(); // gets a total number of compartments
+    double Locker::getOccupancyRate() const {
+    if (compartments.empty()) return 0.0; // Prevent divide by zero
+    
+    int occupied = 0; }
     double occupiedRate = occupiedD / totaln; // takes the number of occupied and divides by number of total compartments, telling the occupied rate.
     return occupiedRate;
-
-}
 
 
