@@ -4,7 +4,7 @@
 // Constructor
 Compartment::Compartment(int id, ParcelSize size, std::string pin, 
 std::chrono::system_clock::time_point expiry)
-: compartmentId_(id), size_(size), pin_(pin), expiryTime_(expiry), isUsed_(false), isLocked_(true)
+: compartmentId_(id), size_(size), pin_(pin), expiryTime_(expiry), isUsed_(false), isOccupied(false), isLocked(true)
 {
     // Validate the PIN at creation too
     if (pin.length() != 4) 
@@ -17,7 +17,29 @@ std::string Compartment::getPin() const { return pin_; }
 std::string Compartment::getCode() const { return code_; }
 bool Compartment::getIsUsed() const { return isUsed_; }
 
-bool Compartment::isAvailable() const { return true; }
+void Compartment::unlock() {
+    isLocked = false;
+}
+
+void Compartment::lock()
+{
+    isLocked = true;
+}
+
+bool Compartment::isAvailable() const
+{
+    return isOccupied == false;
+}
+
+void Compartment::markOccupied()
+{
+    isOccupied = true;
+}
+
+void Compartment::markEmpty()
+{
+    isOccupied = false;
+}
 
 // Setters
 void Compartment::setPin(std::string newPin) {
