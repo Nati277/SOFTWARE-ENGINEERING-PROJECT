@@ -6,12 +6,12 @@
 using std::string;
 
 
-Parcel::Parcel(int parcelId, string barcode, Validation size, double weightKg) //
+Parcel::Parcel(int parcelId, string barcode, ParcelSize size, double weightKg) //
     : parcelId(parcelId), barcode(barcode), size(size), weightKg(weightKg) {} // sets initial attributes
                                                                                  // empty brackets because everything is stored/set no extra code needed
 string Parcel::getBarcode() const {
     return barcode;
 }
-Validation Parcel::getSize() const {
+ParcelSize Parcel::getSize() const {
     return size;
 }
