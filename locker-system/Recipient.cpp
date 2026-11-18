@@ -22,5 +22,5 @@ string Recipient::getPhone() const
 // prints statement to the recipient
 void Recipient::receiveNotification(string message)
 {
-    cout << name << " [" << phone << "]" << " has received a text: " << message << "\n";
+    std::cout << name << " [" << phone << "]" << " has received a text: " << message << "\n";
 }
