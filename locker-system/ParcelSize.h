@@ -5,7 +5,7 @@
 #ifndef LOCKER_SYSTEM_PARCELSIZE_H
 #define LOCKER_SYSTEM_PARCELSIZE_H
 
-enum class Validation {
+enum class ParcelSize {
     SMALL,
     MEDIUM,
     LARGE
