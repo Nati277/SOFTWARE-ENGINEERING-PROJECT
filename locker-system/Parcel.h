@@ -22,7 +22,7 @@ public:
 private:
     int parcelId;
     string barcode;
-    Validation size; // using enumeration
+    ParcelSize size; // using enumeration
     double weightKg;
 };
 
