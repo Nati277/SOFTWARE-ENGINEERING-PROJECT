@@ -1,30 +1,35 @@
-
 #ifndef LOCKER_SYSTEM_COMPARTMENT_H
 #define LOCKER_SYSTEM_COMPARTMENT_H
+
+#include <string>
+#include <chrono>
 #include "ParcelSize.h"
 
-
-
 class Compartment {
-
 public:
-    Compartment(int compartmentId, Validation size); // I'll do it like this for now and try to talk about this in our meeting
+    // Constructor
+    Compartment(int id, ParcelSize size, std::string pin, std::chrono::system_clock::time_point expiry);
 
-    void unlock();
-    void lock();
-    void markOccupied();
-    void markEmpty();
+    // Methods your Locker.cpp needs
     bool isAvailable() const;
-    Validation getSize() const;
-
+    ParcelSize getSize() const;
+    
+    // Methods your security system needs
+    std::string getPin() const;
+    void setPin(std::string newPin);
+    std::string getCode() const;
+    void setUsed(bool used);
+    bool getIsUsed() const;
+    
 private:
-
-    int compartmentId;
-    Validation size;
-    bool isOccupied;
-    bool isLocked;
-
+    // Merged attributes
+    int compartmentId_;
+    ParcelSize size_;
+    std::string pin_;
+    std::string code_;
+    std::chrono::system_clock::time_point expiryTime_;
+    bool isUsed_;
+    bool isLocked_;
 };
 
-
-#endif //LOCKER_SYSTEM_COMPARTMENT_H
+#endif
