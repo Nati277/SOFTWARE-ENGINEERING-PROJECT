@@ -11,6 +11,10 @@ public:
     Compartment(int id, ParcelSize size, std::string pin, std::chrono::system_clock::time_point expiry);
 
     // Methods your Locker.cpp needs
+    void unlock();
+    void lock();
+    void markOccupied();
+    void markEmpty();
     bool isAvailable() const;
     ParcelSize getSize() const;
     
@@ -29,7 +33,8 @@ private:
     std::string code_;
     std::chrono::system_clock::time_point expiryTime_;
     bool isUsed_;
-    bool isLocked_;
+    bool isOccupied;
+    bool isLocked;
 };
 
 #endif
