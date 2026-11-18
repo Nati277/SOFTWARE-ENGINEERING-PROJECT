@@ -11,11 +11,11 @@ using std::string;
 class Parcel {
 
 public:
-    Parcel(int parcelId, string barcode, Validation size, double weightKg);
+    Parcel(int parcelId, string barcode, ParcelSize size, double weightKg);
 
     // getters so it accesses the private stuff.
     string getBarcode() const;
-    Validation getSize() const;
+    ParcelSize getSize() const;
 
     // design doesn't get weight or id for parcel
 
