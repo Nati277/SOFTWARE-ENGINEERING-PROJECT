@@ -37,12 +37,23 @@ double Locker::getOccupancyRate() const
         }
     }
 
-    double occupiedD = static_cast<double>(occupied); // turns occupied which is an int value into a double o we can calculate a rate
-    double Locker::getOccupancyRate() const {
+// gets the amount of occupants
+double Locker::getOccupancyRate() const
+{
     if (compartments.empty()) return 0.0; // Prevent divide by zero
+
+    int occupied = 0; // occupied is set as 0
+
+    for (const Compartment& i : compartments)
+    {
+        if (i.isAvailable() == false)
+        {
+            occupied++; // for each compartment, if one is unavailable it means it has occupants, so occupied increases by one
+        }
+    }
     
-    int occupied = 0; }
-    double occupiedRate = occupiedD / totaln; // takes the number of occupied and divides by number of total compartments, telling the occupied rate.
+    double occupiedD = static_cast<double>(occupied); // turns occupied which is an int value into a double so we can calculate a rate
+    double total = compartments.size(); // gets a total number of compartments
+    double occupiedRate = occupiedD / total; // takes the number of occupied and divides by number of total compartments
     return occupiedRate;
-
-
+}
