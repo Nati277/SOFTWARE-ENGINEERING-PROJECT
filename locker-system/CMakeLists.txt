@@ -18,4 +18,4 @@ add_executable(locker_system main.cpp
         CollectionCode.h
         Validation.h
         MediumLocker.h
-        ../LargeLocker.h)
+        LargeLocker.h)
