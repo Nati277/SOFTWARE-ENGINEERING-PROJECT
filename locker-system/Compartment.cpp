@@ -2,8 +2,9 @@
 #include <stdexcept>
 
 // Constructor
-Compartment::Compartment(ParcelSize size, std::string pin, std::chrono::system_clock::time_point expiry)
-    : size_(size), pin_(pin), expiryTime(expiry), isUsed(false) 
+Compartment::Compartment(int id, ParcelSize size, std::string pin, 
+std::chrono::system_clock::time_point expiry)
+: compartmentId_(id), size_(size), pin_(pin), expiryTime_(expiry), isUsed_(false)
 {
     // Validate the PIN at creation too
     if (pin.length() != 4) 
