@@ -11,19 +11,24 @@
 class Locker {
 
 protected:
-int id_;
+int lockerId_;
 double fee_;
+std::string location_;
+std::vector<Compartment> compartments_;
 
 public:
     Locker(int lockerId, double fee, const std::string location, const std::vector<Compartment> compartments);
-    Compartment* findAvailableCompartment(Validation size); // pointer to allow for actual change of compartment (not on copy)
+
+     // Virtual destructor (required for polymorphism)
+    virtual ~Locker() = default;
+
+    // Pure virtual function (forces subclasses to calculate their own fee)
+    virtual double calculateFee() const = 0;
+
+
+   Compartment* findAvailableCompartment(ParcelSize size); // pointer to allow for actual change of compartment (not on copy)
     double getOccupancyRate() const;
 
-
-private:
-    int lockerId;
-    std::string location;
-    std::vector<Compartment> compartments; // composition begins here, vector used so amount is dynamic.
 
 };
 
