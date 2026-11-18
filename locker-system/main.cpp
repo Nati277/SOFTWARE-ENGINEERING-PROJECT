@@ -6,6 +6,8 @@
 #include "SmallLocker.h"
 #include "Compartment.h"
 #include <chrono>
+#include <cstdlib>
+#include <ctime>
 
 int main()
 {
