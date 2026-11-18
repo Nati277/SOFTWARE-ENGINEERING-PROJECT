@@ -1,7 +1,5 @@
 #include "CollectionCode.h"
 
-#include "CollectionCode.h"
-
 #include <string>
 #include <cstdlib>
 #include <ctime>
