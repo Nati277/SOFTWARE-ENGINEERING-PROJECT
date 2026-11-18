@@ -10,8 +10,12 @@
 
 class Locker {
 
+protected:
+int id_;
+double fee_;
+
 public:
-    Locker(int lockerId, const std::string location, const std::vector<Compartment> compartments);
+    Locker(int lockerId, double fee, const std::string location, const std::vector<Compartment> compartments);
     Compartment* findAvailableCompartment(Validation size); // pointer to allow for actual change of compartment (not on copy)
     double getOccupancyRate() const;
 
