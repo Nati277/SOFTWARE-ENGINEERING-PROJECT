@@ -1,30 +1,36 @@
+#ifndef LOCKER_SYSTEM_COMPARTMENT_H
+#define LOCKER_SYSTEM_COMPARTMENT_H
 
-
-#ifndef LOCKER_SYSTEM_COLLECTIONCODE_H
-#define LOCKER_SYSTEM_COLLECTIONCODE_H
+#include <string>
 #include <chrono>
-#include "Validation.h"
+#include "ParcelSize.h"   // for ParcelSize enum
 
-using std::string;
-
-
-class CollectionCode
-{
+class Compartment {
+private:
+    // Your original attributes
+    std::string code;
+    std::chrono::system_clock::time_point expiryTime;
+    bool isUsed;
+    
+    // The size of the compartment
+    ParcelSize size_;
+    
+    // The PIN to open it
+    std::string pin_;
 
 public:
-    CollectionCode();
+    // Constructor
+    Compartment(ParcelSize size, std::string pin, std::chrono::system_clock::time_point expiry);
 
-    string generate();
-
-    Validation validate(const string& input); // using the enumeration we agreed on TEMP NAME CHANGE LATER
-
-private:
-
-    string code;
-    std::chrono::system_clock::time_point expiryTime; // Design uses datetime, chrono stuff seems closest
-    bool isUsed;
-
+    // Getters
+    ParcelSize getSize() const;
+    std::string getPin() const;
+    std::string getCode() const;
+    bool getIsUsed() const;
+    
+    // Setters with validation
+    void setPin(std::string newPin);
+    void setUsed(bool used);
 };
 
-
-#endif //LOCKER_SYSTEM_COLLECTIONCODE_H
+#endif // LOCKER_SYSTEM_COMPARTMENT_H
