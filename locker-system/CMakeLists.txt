@@ -20,4 +20,6 @@ add_executable(locker_system main.cpp
         MediumLocker.h
         LargeLocker.h
         Delivery.cpp
-        Delivery.h)
+        Delivery.h
+        Notification.cpp
+        Notification.h)
