@@ -15,3 +15,4 @@ string Parcel::getBarcode() const {
 ParcelSize Parcel::getSize() const {
     return size;
 }
+

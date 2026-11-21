@@ -1,12 +1,20 @@
-//
-// Created by antia on 21/11/2026.
-//
-
 #ifndef LOCKER_SYSTEM_NOTIFICATION_H
 #define LOCKER_SYSTEM_NOTIFICATION_H
 
+#include "Recipient.h"
+#include <string>
+#include <chrono>
+
 
 class Notification {
+public:
+    Notification(const std::string& message);
+
+    bool send(Recipient recipient);
+
+private:
+    std::string message_;
+    std::chrono::system_clock::time_point sentAt_; // same as dateTime in my opinion
 };
 
 
