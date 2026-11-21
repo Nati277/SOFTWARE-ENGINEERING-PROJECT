@@ -12,7 +12,8 @@ public:
         : Locker(id, 1.50, location, compartments) {}
 
     // Implement the pure virtual function from Locker!
-    double calculateFee() const override {
+    double calculateFee() const override
+    {
         return fee_;
     }
 };

@@ -19,14 +19,12 @@ std::vector<Compartment> compartments_;
 public:
     Locker(int lockerId, double fee, const std::string location, const std::vector<Compartment> compartments);
 
-     // Virtual destructor (required for polymorphism)
     virtual ~Locker() = default;
 
-    // Pure virtual function (forces subclasses to calculate their own fee)
     virtual double calculateFee() const = 0;
 
 
-   Compartment* findAvailableCompartment(ParcelSize size); // pointer to allow for actual change of compartment (not on copy)
+   Compartment* findAvailableCompartment(ParcelSize size); // pointer to allow for actual change of compartment
     double getOccupancyRate() const;
 
 

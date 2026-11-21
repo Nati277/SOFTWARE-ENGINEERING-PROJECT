@@ -6,9 +6,8 @@ Compartment::Compartment(int id, ParcelSize size, std::string pin,
 std::chrono::system_clock::time_point expiry)
 : compartmentId_(id), size_(size), pin_(pin), expiryTime_(expiry), isUsed_(false), isOccupied_(false), isLocked_(true)
 {
-    // Validate the PIN at creation too
     if (pin.length() != 4) 
-        throw std::invalid_argument("PIN must be exactly 4 digits");
+        throw std::invalid_argument("The PIN must be 4 digits long");
 }
 
 // Getters
@@ -45,7 +44,7 @@ void Compartment::markEmpty()
 // Setters
 void Compartment::setPin(std::string newPin) {
     if (newPin.length() != 4) 
-        throw std::invalid_argument("PIN must be exactly 4 digits");
+        throw std::invalid_argument("The PIN must be 4 digits long");
     pin_ = newPin;
 }
 
