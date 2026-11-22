@@ -15,10 +15,10 @@ public:
 
 
 private:
-    int parcelId;
-    string barcode;
-    ParcelSize size; // using enumeration
-    double weightKg;
+    int parcelId_;
+    string barcode_;
+    ParcelSize size_; // using enumeration
+    double weightKg_;
 };
 
 

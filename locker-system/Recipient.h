@@ -13,7 +13,7 @@ class Recipient {
 public:
     Recipient(int recipientId, string name, string phone); // constructor is announced here, will be called when object initialises
 
-    // the following are getters (access private stuff without changing it)
+    // getters
 
     int getRecipientId() const;
     string getName() const;
@@ -21,10 +21,10 @@ public:
 
     void receiveNotification(string message);
 
-private: // private so it's a usecase of encapsulation
-    int recipientId;
-    string name;
-    string phone;
+private:
+    int recipientId_;
+    string name_;
+    string phone_;
 };
 
 #endif //LOCKER_SYSTEM_RECIPIENT_H

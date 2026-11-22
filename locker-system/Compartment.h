@@ -7,7 +7,6 @@
 
 class Compartment {
 public:
-    // Constructor
     Compartment(int id, ParcelSize size, std::string pin, std::chrono::system_clock::time_point expiry);
 
     void unlock();
@@ -19,17 +18,18 @@ public:
 
     std::string getPin() const;
     void setPin(std::string newPin);
-    std::string getCode() const;
     void setUsed(bool used);
     bool getIsUsed() const;
+
     std::chrono::system_clock::time_point getExpiryTime() const;
+    void setExpiryTime(std::chrono::system_clock::time_point expiry);
+
     
 private:
 
     int compartmentId_;
     ParcelSize size_;
     std::string pin_;
-    std::string code_;
     std::chrono::system_clock::time_point expiryTime_;
     bool isUsed_;
     bool isOccupied_;

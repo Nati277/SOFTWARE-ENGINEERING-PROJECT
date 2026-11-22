@@ -8,6 +8,8 @@ using std::string;
 
 std::string CollectionCode::generate() 
 {
+
+
     std::string newCode = "";
     for (int i = 0; i < 4; i++)  // creates 4 digit code now
     {

@@ -3,7 +3,6 @@
 
 Delivery::Delivery(int deliveryId, const Parcel& parcel, const Recipient& recipient) :
 deliveryId_(deliveryId), status_(DeliveryStatus::CREATED), parcel_(parcel),compartment_(nullptr) ,recipient_(recipient) {}
-// compartment_ holds nullptr at initialisation because no compartment assigned yet
 
 int Delivery::getDeliveryId() const {
     return deliveryId_;

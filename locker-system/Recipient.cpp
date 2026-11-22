@@ -5,22 +5,23 @@ using std::string;
 using std::cout;
 
 Recipient::Recipient(int recipientId, string name, string phone) // constructor so called when object initialised
-    :recipientId(recipientId), name(name), phone(phone) {} // initialiser list, this basically fills in the private variables
+    :recipientId_(recipientId), name_(name), phone_(phone) {} // initialiser list, this basically fills in the private variables
 
 int Recipient::getRecipientId() const
 {
-    return recipientId;
+    return recipientId_;
 }
 string Recipient::getName() const
 {
-    return name;
+    return name_;
 }
 string Recipient::getPhone() const
 {
-    return phone;
+    return phone_;
 }
-// prints statement to the recipient
+
+
 void Recipient::receiveNotification(string message)
 {
-    std::cout << name << " [" << phone << "]" << " has received a text: " << message << "\n";
+    std::cout << name_ << " [" << phone_ << "]" << " has received a text: " << message << "\n";
 }

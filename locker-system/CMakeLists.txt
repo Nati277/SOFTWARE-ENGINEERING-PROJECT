@@ -22,4 +22,6 @@ add_executable(locker_system main.cpp
         Delivery.cpp
         Delivery.h
         Notification.cpp
-        Notification.h)
+        Notification.h
+        LockerController.cpp
+        LockerController.h)

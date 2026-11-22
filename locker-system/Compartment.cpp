@@ -13,7 +13,6 @@ std::chrono::system_clock::time_point expiry)
 // Getters
 ParcelSize Compartment::getSize() const { return size_; }
 std::string Compartment::getPin() const { return pin_; }
-std::string Compartment::getCode() const { return code_; }
 bool Compartment::getIsUsed() const { return isUsed_; }
 std::chrono::system_clock::time_point Compartment::getExpiryTime() const { return expiryTime_; } // expiry time getter
 
@@ -50,4 +49,8 @@ void Compartment::setPin(std::string newPin) {
 
 void Compartment::setUsed(bool used) {
     isUsed_ = used;
+}
+
+void Compartment::setExpiryTime(std::chrono::system_clock::time_point expiry) {
+    expiryTime_ = expiry;
 }
